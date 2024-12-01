@@ -12,18 +12,24 @@
 
 html,
 body {
-  max-width: 100vw;
+  /* max-width: 100vw; */
   overflow-x: hidden;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* margin: 0 9rem; */
 }
 
+@media (max-width: 700px) {
+  body{
+    margin: 0;
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -39,4 +45,51 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.css-z6abfx-MuiInputBase-root-MuiInput-root-MuiSelect-root::before{
+  border-bottom: 0 !important;
+}
+
+.css-1onselz-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+  font-size: 12px !important;
+}
+
+.doughnut-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ffd700, #ff8c00);
+}
+
+.doughnut {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, transparent 50%, #fff 50%);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.doughnut:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.doughnut-tl {
+  top: -100px;
+  left: -100px;
+}
+
+.doughnut-br {
+  bottom: -100px;
+  right: -100px;
 }
