@@ -86,16 +86,14 @@ const ModalDetail = ({
                     </Typography>
                     <Box display="flex" flexWrap="wrap" style={{gap: '0.5rem'}}>
                       {selectedPokemon.types.map((type, index) => (
-                        <Chip
-                          key={index}
-                          label={type}
-                          style={typePokemon(type)}
-                        />
+                        <div key={index} className={`type-chip text-white`} style={typePokemon(type)}>
+                        {type}
+                      </div>
                       ))}
                     </Box>
                   </Box>
-                  <Box mt={2}>
-                    <Link href={`/pokemon/${selectedPokemon.id}`} color='primary'>
+                  <Box mt={6} mb={6}>
+                    <Link href={`/pokemon/${selectedPokemon.id}`} className='btn-primary'>
                       More Detail
                     </Link >
                   </Box>

@@ -2,10 +2,8 @@
 import React,{useState} from 'react'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { AppBar, Toolbar, Typography, Box,  makeStyles, Theme, createStyles,styled} from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import LanguageSelect from '@/components/LanguageSelect';
+import { AppBar, Toolbar, Box, styled} from "@mui/material";
+
 
 interface StyledLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   active?: boolean;
@@ -21,6 +19,7 @@ const StyledLink = styled(Link, {
 const Header: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const pathname = usePathname();
+
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -31,16 +30,16 @@ const Header: React.FC = () => {
 
 
   return (
-    <AppBar position="static" color="transparent" elevation={0} style={{margin: '0 9rem'}}>
+    <AppBar position="static" color="transparent" elevation={0} className='container' style={{paddingTop: 0, paddingBottom: 0}}>
         <Toolbar>
             <Box display="flex" alignItems="center" flexGrow={1}>
-                <img src={"../../../assets/img/logo.png"} alt="Logo" style={{ height: "40px", marginRight: "16px" }} />
-                <StyledLink href="/" active={pathname === '/'}>
-            Home
-          </StyledLink>
-          <StyledLink href="/pokemon-type" active={pathname === '/pokemon-type'}>
-            Pokemon Type
-          </StyledLink>
+              <img src={"../../../assets/img/logo.png"} alt="Logo" style={{ height: "40px", marginRight: "16px" }} />
+              <StyledLink href="/" active={pathname === '/'}>
+                Home
+              </StyledLink>
+              <StyledLink href="/pokemon-type" active={pathname === '/pokemon-type'}>
+                Pokemon Type
+              </StyledLink>
             </Box>
         </Toolbar>
     </AppBar>

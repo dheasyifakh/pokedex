@@ -1,3 +1,5 @@
+"use client"
+import React,{useRef} from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Box, Typography, Button, Grid, } from '@mui/material';
@@ -5,9 +7,14 @@ import PokedexPage from "@/components/pokedex/pokedex";
 
 
 export default function Home() {
+  const pokedexRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToPokedex = () => {
+    pokedexRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div >
-      <Box sx={{ paddingY: 6, paddingX: 4 }} style={{padding: '0 9rem'}}>
+      <Box sx={{ paddingY: 6, paddingX: 4 }} className="container">
       <Grid container alignItems="center" spacing={4}>
         <Grid item xs={12} md={6}>
           <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
@@ -20,6 +27,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             sx={{ marginTop: 3, textTransform: 'none', fontWeight: 'bold' }}
+            onClick={handleScrollToPokedex}
           >
             Check PokéDex
           </Button>
@@ -29,7 +37,10 @@ export default function Home() {
         </Grid>
       </Grid>
     </Box>
+    <div ref={pokedexRef}>
     <PokedexPage/>
+
+    </div>
     </div>
   );
 }

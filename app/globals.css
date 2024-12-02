@@ -47,6 +47,15 @@ a {
   }
 }
 
+.container{
+  padding: 3rem 9rem;
+}
+
+@media (max-width: 700px){
+  .container{
+    padding: 1rem;
+  }
+}
 .css-z6abfx-MuiInputBase-root-MuiInput-root-MuiSelect-root::before{
   border-bottom: 0 !important;
 }
@@ -92,4 +101,33 @@ a {
 .doughnut-br {
   bottom: -100px;
   right: -100px;
+}
+
+.css-8k6bqc-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  color: #ffbb00 !important;
+  border: 1px solid rgb(255 255 255 / 50%) !important;
+  background-color: rgb(255 255 255) !important;
+}
+.css-8k6bqc-MuiButtonBase-root-MuiPaginationItem-root{
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.css-eorpq6-MuiCircularProgress-circle{
+  /* stroke: #0a0a0a; */
+}
+
+.type-chip {
+  padding: 7px 25px;
+  border-radius:25px;
+  background-color: gray;
+  color: white !important;
+  font-size: 16px;
+}
+
+.btn-primary{
+  color: white;
+  background-color: rgba(230, 171, 9, 1);
+  padding: 10px 25px;
+  border-radius: 14px;
 }
