@@ -188,7 +188,7 @@ const PokedexPage: React.FC = () => {
           shape="rounded"
         />
         <div>Total Data: {pokemonDetails.length}</div>
-      </div>;
+      </div>
     </div>
   );
 };
