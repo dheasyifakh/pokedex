@@ -131,3 +131,41 @@ a {
   padding: 10px 25px;
   border-radius: 14px;
 }
+.half-doughnut {
+  position: absolute;
+  border-radius: 50%;
+  background: conic-gradient(
+      from 180deg,
+      transparent 180deg,
+      #3498db 180deg
+  );
+}
+
+.half-doughnut::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+.top-left {
+  width: 400px;
+  height: 400px;
+  bottom: -40rem;
+  left: -200px;
+}
+
+.center-right {
+  border-radius: 100%;
+  width: 500px;
+  height: 500px;
+  top: 85%;
+  right: -315px;
+  transform: translateY(-50%);
+  background: #3498db;
+}

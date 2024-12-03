@@ -67,14 +67,14 @@ const PokemonType = () => {
     currentPage * itemsPerPage
   );
 
-  // Handle background color change
-  const background= selectedType ? `#${selectedType.charCodeAt(0).toString(16)}${selectedType.charCodeAt(1).toString(16)}FF` : '#FFFFFF';
-
+ 
   return (
-    <div style={{ background}}>
+    <div >
+      <div className="half-doughnut top-left"></div>
+      <div className="half-doughnut center-right"></div>
         <div className="container">
             <Grid container spacing={4}>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={4} style={{backgroundColor: "#ffffff94", zIndex: 1}}>
                     <Typography variant='h5'>Pokemon Type</Typography>
                     {types.map((type) => (
                         <Button
@@ -90,7 +90,7 @@ const PokemonType = () => {
                     ))}
                     {/* <Sidebar types={types} setSelectedType={setSelectedType} setCurrentPage={setCurrentPage}/> */}
                 </Grid>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} md={8} style={{backgroundColor: "#ffffff94", zIndex: 1}}>
                     <div style={{padding: '1rem' }}>
                         <Typography variant="h4" gutterBottom>
                         Pokémon List
@@ -120,7 +120,7 @@ const PokemonType = () => {
                                 </TableCell>
                                 <TableCell>
                                     <Typography variant="body2" style={{ color: 'rgba(179, 182, 184, 1)' }}>
-                                    #{index + 1}
+                                    #{pokemon.id}
                                     </Typography>
                                     <Typography variant="h4">{pokemon.name}</Typography>
                                 </TableCell>
